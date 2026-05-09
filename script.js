@@ -220,7 +220,7 @@ if (document.getElementById('photoGrid')) {
 { src: "/images/image 126.jpg", name: "Ancestral Photo 9", category: "ancestral" },
 { src: "/images/image 90.jpg", name: "Candid Shot 10", category: "everyday" },
 { src: "/images/image 37.jpg", name: "Birthday 11", category: "milestones" },
-{ src: "/images/image 26.jpg", name: "Family Legacy 12", category: "ancestral" },
+{ src: "/images/image26.jpg", name: "Family Legacy 12", category: "ancestral" },
 { src: "/images/image51.jpg", name: "Family Legacy 13", category: "ancestral" },
 { src: "/images/image91.jpg", name: "Family Portrait 14", category: "ancestral" },
 { src: "/images/image 16.jpg", name: "Birthday 15", category: "milestones" },
