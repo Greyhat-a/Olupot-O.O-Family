@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Olupot Family • The Memory Archive</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <h1>Olupot Family</h1>
+            <p>The Gilded Heritage • Since 1965</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Profiles.html">Family</a></li>
+                <li><a href="Gallery.html" class="livepage">Gallery</a></li>
+                <li><a href="Stories.html">Stories</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>📸 The Memory Archive</h2>
+    <p>A visual journey through our history — from ancestral roots to today's milestones</p>
+</section>
+
+<div class="container">
+    <!-- ALBUM FILTERS -->
+    <div class="album-filters">
+        <button class="filter-btn active" data-filter="all">📷 All Photos</button>
+        <button class="filter-btn" data-filter="ancestral">🕰️ Ancestral</button>
+        <button class="filter-btn" data-filter="gathering">🎉 Gatherings</button>
+        <button class="filter-btn" data-filter="milestones">🏆 Milestones</button>
+        <button class="filter-btn" data-filter="everyday">🏡 Everyday Moments</button>
+    </div>
+
+    <!-- PHOTO GRID (your images will appear here) -->
+    <div id="photoGrid" class="photo-grid"></div>
+
+    <!-- UPLOAD NEW MEMORIES (bonus feature) -->
+    <div class="upload-section">
+        <label for="imageUpload" class="upload-label">
+            📤 + Add New Family Memory
+        </label>
+        <input type="file" id="imageUpload" accept="image/*" multiple>
+        <div class="upload-note">
+            ✨ Upload new photos to expand our archive. They'll be saved in your browser.
+        </div>
+    </div>
+</div>
+
+<!-- LIGHTBOX MODAL -->
+<div id="lightboxModal" class="lightbox-modal">
+    <span class="close-lightbox">&times;</span>
+    <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="Family memory">
+        <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Olupot Family • Built with unity and legacy • Every image tells our story</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
