@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Olupot Family • Our Stories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <h1>Olupot Family</h1>
+            <p>The Gilded Heritage • Since 1965</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Profiles.html">Family</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Stories.html" class="livepage">Stories</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>📖 The Family Archives</h2>
+    <p>Every story matters. Every memory counts. Share yours today.</p>
+</section>
+
+<div class="container">
+    <!-- UPLOAD NEW STORY SECTION -->
+    <div class="upload-story">
+        <h3>✍️ Share Your Story</h3>
+        <form id="storyForm">
+            <div class="form-group">
+                <label>Story Title</label>
+                <input type="text" id="storyTitle" required placeholder="e.g., The Day We First Met...">
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <select id="storyCategory">
+                    <option value="history">🏛️ History & Heritage</option>
+                    <option value="milestones">🎉 Milestones & Celebrations</option>
+                    <option value="memories">💭 Personal Memories</option>
+                    <option value="recipes">🍲 Recipes & Traditions</option>
+                    <option value="legacy">🌟 Legacy & Lessons</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Your Name (optional)</label>
+                <input type="text" id="storyAuthor" placeholder="e.g., Cousin Michael">
+            </div>
+            <div class="form-group">
+                <label>Story Content</label>
+                <textarea id="storyContent" required placeholder="Write your story here... What happened? Who was there? Why does this memory matter?"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Image URL (optional - paste a link or leave blank)</label>
+                <input type="text" id="storyImage" placeholder="/images /your-photo.jpg or https://...">
+            </div>
+            <button type="submit" class="submit-story">📖 Publish Story</button>
+        </form>
+    </div>
+
+    <!-- STORY CONTROLS -->
+    <div class="story-controls">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Stories</button>
+            <button class="filter-btn" data-filter="history">🏛️ History</button>
+            <button class="filter-btn" data-filter="milestones">🎉 Milestones</button>
+            <button class="filter-btn" data-filter="memories">💭 Memories</button>
+            <button class="filter-btn" data-filter="recipes">🍲 Recipes</button>
+            <button class="filter-btn" data-filter="legacy">🌟 Legacy</button>
+        </div>
+        <input type="text" id="searchStories" class="search-box" placeholder="🔍 Search stories...">
+    </div>
+
+    <!-- STORIES GRID -->
+    <div id="storiesGrid" class="stories-grid">
+        <div class="empty-stories">✨ No stories yet. Be the first to share a family memory above!</div>
+    </div>
+</div>
+
+<!-- MODAL FOR VIEWING/EDITING STORIES -->
+<div id="storyModal" class="story-modal">
+    <div class="story-modal-content">
+        <div class="story-modal-header">
+            <span class="close-story-modal">&times;</span>
+            <h2 id="modalStoryTitle">Story Title</h2>
+            <p id="modalStoryMeta"></p>
+        </div>
+        <div class="story-modal-body" id="modalStoryBody">
+            <!-- Dynamic content -->
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Olupot Family • Built with unity and legacy • Your stories keep us connected</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

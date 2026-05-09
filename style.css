@@ -1,0 +1,1066 @@
+/* ============================================
+   OLUPOT FAMILY WEBSITE - MASTER STYLESHEET
+   ============================================
+   This file contains ALL styles for:
+   - Home.html
+   - Gallery.html  
+   - Profiles.html
+   - Stories.html
+   ============================================ */
+
+/* ========== 1. RESET & BASE (Global) ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    background-color: #FDFAF6;
+    color: #2C2C2C;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #D4AF37;
+    padding-left: 20px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: #5C4033;
+}
+
+a {
+    text-decoration: none;
+    color: #5C4033;
+    transition: all 0.2s ease;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ========== 2. HEADER & NAVIGATION (All Pages) ========== */
+header {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo h1 {
+    font-size: 1.7rem;
+    color: #5C4033;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: #B48C48;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5C4033;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    border-bottom-color: #D4AF37;
+    color: #B48C48;
+}
+
+/* ========== 3. HERO SECTION (Base) ========== */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                url('/images /image 85.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 24px;
+    color: white;
+    margin-bottom: 50px;
+}
+/* Hero Slideshow */
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+/* Optional: add a dark overlay for text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h2 {
+    border-left: none;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ========== 4. BUTTONS & COMMON ELEMENTS ========== */
+button, .button {
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid #D4AF37;
+    padding: 8px 22px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: 0.2s;
+    color: #5C4033;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #D4AF37;
+    color: #2C2C2C;
+}
+
+/* Upload section styling (shared) */
+.upload-section, .upload-story {
+    background: white;
+    border-radius: 28px;
+    padding: 30px;
+    margin: 50px 0;
+    text-align: center;
+    border: 2px dashed #D4AF37;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.upload-label, .submit-story {
+    background: #5C4033;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-label:hover, .submit-story:hover {
+    background: #7a5a48;
+    transform: scale(1.02);
+}
+
+/* Form groups (shared) */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #5C4033;
+}
+
+.form-group input, 
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #D4AF37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Hide file input */
+#imageUpload {
+    display: none;
+}
+
+/* Empty state */
+.empty-state, .empty-gallery, .empty-stories {
+    text-align: center;
+    padding: 80px 20px;
+    color: #b8a99a;
+    font-style: italic;
+}
+
+/* ========== 5. MODALS (Popups for all pages) ========== */
+.modal, .lightbox-modal, .story-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content, .story-modal-content {
+    background: white;
+    border-radius: 32px;
+    max-width: 550px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85vh;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    display: block;
+    margin: 0 auto;
+}
+
+.lightbox-caption {
+    padding: 18px 24px;
+    background: white;
+    text-align: center;
+    font-weight: 500;
+    color: #5C4033;
+    border-top: 1px solid #ede3d4;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.96);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+/* Modal Headers */
+.modal-header, .story-modal-header {
+    background: #5C4033;
+    color: white;
+    padding: 25px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-header h2, .story-modal-header h2 {
+    border-left: none;
+    color: white;
+    margin-bottom: 5px;
+    padding-right: 30px;
+}
+
+.modal-header p {
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+.modal-body, .story-modal-body {
+    padding: 30px;
+}
+
+/* Close buttons for all modals */
+.close-modal, .close-lightbox, .close-story-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+    background: rgba(0,0,0,0.4);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.close-modal:hover, .close-lightbox:hover, .close-story-modal:hover {
+    background: rgba(0,0,0,0.7);
+    transform: scale(1.05);
+}
+
+/* Detail sections inside modals */
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section h4 {
+    color: #D4AF37;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.detail-section p, .detail-section ul {
+    color: #4a3a2e;
+    line-height: 1.5;
+}
+
+.detail-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.detail-section li {
+    padding: 6px 0;
+    border-bottom: 1px solid #ede3d4;
+}
+
+.memory-quote {
+    font-style: italic;
+    background: #FFF9EF;
+    padding: 15px;
+    border-radius: 16px;
+    margin-top: 20px;
+    border-left: 4px solid #D4AF37;
+}
+
+/* ========== 6. HOME PAGE SPECIFIC STYLES ========== */
+.welcome-note {
+    background: #FFF9EF;
+    border-radius: 28px;
+    padding: 40px 48px;
+    margin-bottom: 60px;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+}
+
+.welcome-note p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    color: #3e2c24;
+}
+
+.values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 60px 0;
+}
+
+.value-card {
+    background: white;
+    border-radius: 24px;
+    padding: 28px 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.2s;
+}
+
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 32px rgba(0, 0, 0, 0.1);
+}
+
+.value-card .icon {
+    font-size: 2.6rem;
+    display: block;
+    margin-bottom: 16px;
+}
+
+.value-card p {
+    font-size: 0.95rem;
+    color: #5a4a3e;
+}
+
+.featured-memory {
+    background: #FFFFFF;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.memory-image {
+    flex: 1.2;
+    min-height: 280px;
+    background-size: cover;
+    background-position: center;
+}
+
+.memory-text {
+    flex: 1;
+    padding: 40px 36px;
+    background: #FEFAF2;
+}
+
+.memory-text .date {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #B48C48;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.memory-text h3 {
+    font-size: 1.9rem;
+    margin-bottom: 15px;
+}
+
+.memory-text p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.read-memory {
+    display: inline-block;
+    font-weight: bold;
+    border-bottom: 2px solid #D4AF37;
+    padding-bottom: 4px;
+}
+
+.timeline {
+    margin: 70px 0;
+}
+
+.timeline-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.timeline-item {
+    background: white;
+    border-radius: 24px;
+    padding: 24px 28px;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s;
+    border-left: 4px solid #D4AF37;
+}
+
+.timeline-item h4 {
+    font-size: 1.8rem;
+    color: #B48C48;
+    margin-bottom: 12px;
+}
+
+.generation-preview {
+    text-align: center;
+    margin: 70px 0;
+}
+
+.gen-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.gen-card {
+    text-align: center;
+    max-width: 140px;
+    transition: transform 0.2s;
+}
+
+.gen-card:hover {
+    transform: scale(1.02);
+}
+
+.circle-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #D4AF37;
+    background: #e9ddd0;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.placeholder-img {
+    background: #DCCFBC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #7a5a48;
+}
+
+.cta {
+    background: #2C2C2C;
+    color: white;
+    text-align: center;
+    padding: 64px 24px;
+    border-radius: 48px;
+    margin: 60px 0 50px;
+}
+
+.cta h2 {
+    color: white;
+    border-left: 5px solid #D4AF37;
+    text-align: center;
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.cta p {
+    max-width: 600px;
+    margin: 20px auto;
+    opacity: 0.85;
+}
+
+.cta-button {
+    background: #D4AF37;
+    color: #2C2C2C;
+    padding: 12px 32px;
+    border-radius: 40px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.cta-button:hover {
+    background: #c49f2b;
+    transform: scale(1.02);
+}
+
+/* ========== 7. GALLERY PAGE SPECIFIC STYLES ========== */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.photo-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.2s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.12);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-info {
+    padding: 14px 16px;
+    background: white;
+}
+
+.photo-name {
+    font-weight: bold;
+    color: #5C4033;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.photo-category {
+    font-size: 0.75rem;
+    color: #B48C48;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.delete-photo {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.7rem;
+    color: #b87c5e;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete-photo:hover {
+    color: #c0392b;
+}
+
+.album-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+/* ========== 8. PROFILES PAGE (FAMILY TREE) SPECIFIC STYLES ========== */
+.family-tree {
+    margin: 50px 0;
+}
+
+.root-family {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.patriarch-card {
+    background: linear-gradient(135deg, #5C4033 0%, #7a5a48 100%);
+    color: white;
+    display: inline-block;
+    padding: 30px 50px;
+    border-radius: 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.patriarch-card:hover {
+    transform: scale(1.02);
+}
+
+.patriarch-card strong {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.patriarch-card p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.branch-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.branch-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.branch-header {
+    background: #FFF9EF;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #D4AF37;
+}
+
+.branch-header h3 {
+    font-size: 1.3rem;
+    color: #5C4033;
+    margin-bottom: 5px;
+}
+
+.branch-header p {
+    color: #B48C48;
+    font-size: 0.85rem;
+}
+
+.branch-children {
+    padding: 20px;
+}
+
+.branch-children h4 {
+    font-size: 0.9rem;
+    color: #B48C48;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.children-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.child-tag {
+    background: #F0E9DF;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #5C4033;
+}
+
+.view-details {
+    display: inline-block;
+    margin-top: 15px;
+    color: #D4AF37;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.standalone-card {
+    background: white;
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.25s;
+}
+
+.standalone-card:hover {
+    transform: translateY(-5px);
+}
+
+.standalone-card h3 {
+    color: #5C4033;
+}
+
+/* ========== 9. STORIES PAGE SPECIFIC STYLES ========== */
+.story-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.search-box {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    width: 250px;
+    font-family: inherit;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.story-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s, box-shadow 0.2s;
+    position: relative;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.story-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #F0E9DF;
+}
+
+.story-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #D4AF37;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #2C2C2C;
+}
+
+.story-content {
+    padding: 20px;
+}
+
+.story-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #5C4033;
+}
+
+.story-meta {
+    font-size: 0.8rem;
+    color: #B48C48;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.story-excerpt {
+    color: #4a3a2e;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.story-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.read-more, .edit-story, .delete-story {
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.read-more {
+    background: #5C4033;
+    color: white;
+}
+
+.read-more:hover {
+    background: #7a5a48;
+}
+
+.edit-story {
+    background: #FFF9EF;
+    color: #5C4033;
+    border: 1px solid #D4AF37;
+}
+
+.delete-story {
+    background: #fee;
+    color: #c0392b;
+    border: 1px solid #c0392b;
+}
+
+.edit-story:hover, .delete-story:hover {
+    transform: scale(1.02);
+}
+
+.full-story-content {
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+/* Edit form inside modal */
+.edit-form input, .edit-form textarea, .edit-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* ========== 10. FOOTER (All Pages) ========== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #7b6b5e;
+    border-top: 1px solid #ede3d4;
+    margin-top: 60px;
+}
+
+/* ========== 11. RESPONSIVE MEDIA QUERIES ========== */
+@media (max-width: 820px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.7rem;
+    }
+    
+    .featured-memory {
+        flex-direction: column;
+    }
+    
+    .memory-image {
+        min-height: 220px;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+    
+    .photo-card img {
+        height: 180px;
+    }
+    
+    .branches-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .patriarch-card strong {
+        font-size: 1.3rem;
+    }
+    
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .welcome-note {
+        padding: 30px 20px;
+    }
+    
+    .welcome-note p {
+        font-size: 1rem;
+    }
+    
+    .values-grid {
+        gap: 15px;
+    }
+    
+    .value-card {
+        min-width: 140px;
+        padding: 20px 15px;
+    }
+    
+    .timeline-items {
+        flex-direction: column;
+    }
+    
+    .gen-grid {
+        gap: 20px;
+    }
+    
+    .circle-img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .story-controls {
+        flex-direction: column;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+}
+
+/* Active/Current Page Nav Link */
+nav a.livepage,
+nav .livepage {
+    border-bottom-color: #D4AF37;
+    color: #D4AF37;
+    text-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+    transform: scale(1.02);
+    font-weight: 600;
+}
